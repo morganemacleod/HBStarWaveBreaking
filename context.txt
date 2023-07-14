@@ -1,7 +1,7 @@
 argv:
 - /Users/morganmacleod/anaconda3/lib/python3.8/site-packages/ipykernel_launcher.py
 - -f
-- /Users/morganmacleod/Library/Jupyter/runtime/kernel-8bad1c29-c71e-443f-830a-4d48b97f851f.json
+- /Users/morganmacleod/Library/Jupyter/runtime/kernel-14919854-8386-4b17-83bd-7804d05e286d.json
 cpu_info:
 - alabaster==0.7.12
 - anaconda-client==1.7.2
@@ -25,9 +25,9 @@ cpu_info:
 - autopep8 @ file:///tmp/build/80754af9/autopep8_1592412889138/work
 - Babel==2.11.0
 - backcall==0.2.0
-- backports.functools-lru-cache==1.6.1
+- backports.functools-lru-cache @ file:///tmp/build/80754af9/backports.functools_lru_cache_1618170165463/work
 - backports.shutil-get-terminal-size==1.0.0
-- backports.tempfile==1.0
+- backports.tempfile @ file:///home/linux1/recipes/ci/backports.tempfile_1610991236607/work
 - backports.weakref==1.0.post1
 - beautifulsoup4==4.9.1
 - bidict==0.22.0
@@ -46,13 +46,15 @@ cpu_info:
 - click==7.1.2
 - cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1594141588948/work
 - clyent==1.2.2
+- cmake==3.26.3
 - cmocean==2.0
 - colorama==0.4.3
 - colorcet==3.0.1
 - commonmark==0.9.1
 - conda==4.8.3
 - conda-build==3.18.11
-- conda-package-handling==1.7.0+0.g7c4a471.dirty
+- conda-package-handling @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_f61sssj1s3/croot/conda-package-handling_1685024797154/work
+- conda-package-streaming @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_78ue32m8ay/croot/conda-package-streaming_1685019689310/work
 - conda-verify==3.4.2
 - configobj==5.0.6
 - contextlib2==0.6.0.post1
@@ -269,6 +271,7 @@ cpu_info:
 - SQLAlchemy @ file:///opt/concourse/worker/volumes/live/45657106-f60d-42e1-6501-7d65be3b36ab/volume/sqlalchemy_1593446313078/work
 - statsmodels==0.11.1
 - svgutils==0.3.4
+- svn==1.0.1
 - sympy @ file:///opt/concourse/worker/volumes/live/32ef3b19-6d5e-459b-54bf-1bfa312324b4/volume/sympy_1594236601710/work
 - tables==3.8.0
 - tblib==1.6.0
@@ -301,12 +304,13 @@ cpu_info:
 - XlsxWriter==1.2.9
 - xlwings==0.19.5
 - xlwt==1.3.0
-- xmltodict==0.12.0
+- xmltodict @ file:///Users/ktietz/demo/mc3/conda-bld/xmltodict_1629301980723/work
 - yapf @ file:///tmp/build/80754af9/yapf_1593528177422/work
 - zict==2.0.0
 - zipp==3.1.0
 - zope.event==4.4
 - zope.interface==4.7.1
+- zstandard @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_40ayfv1xn6/croot/zstandard_1677014126754/work
 packages: null
 platform: macOS-10.15.7-x86_64-i386-64bit
 python:
@@ -318,4 +322,4 @@ python:
   - '3'
   - '8'
   - '3'
-timestamp: '2023-05-18T12:33:29.258375Z'
+timestamp: '2023-06-05T20:36:18.427937Z'
