@@ -1,0 +1,175 @@
+<job>
+problem_id = HSE      # problem ID: basename of output filenames
+
+<output1>
+file_type  = hdf5        # Binary data dump
+variable   = prim       # variables to be output
+dt         = 1.e6      # time increment between outputs
+xdmf=0
+
+<output2>
+file_type  = hst      # history
+dt         = 1.e4     # time increment between outputs
+
+#<output3>
+#file_type  = hdf5        # Binary data dump
+#variable   = prim       # variables to be output
+#dt         = 7200.0      # time increment between outputs
+#x1_slice   = 2.0865e12  # slice r=rstar
+#xdmf=0
+
+<NOoutput4>
+file_type  = hdf5        # Binary data dump
+variable   = prim       # variables to be output
+dt         = 1.e4      # time increment between outputs
+x2_slice   = 1.57079632679 # slice at pi/2
+xdmf=0
+
+
+<output8>
+file_type  = rst       # Restart dump
+dt         = 1e99      # time increment between outputs
+
+<time>
+cfl_number = 0.3        # The Courant, Friedrichs, & Lewy (CFL) Number
+nlim       = -1       # cycle limit
+tlim       = 3.e7       # time limit
+integrator = vl2
+xorder = 2
+
+<mesh>
+nx1        = 192            # Number of zones in X1-direction
+x1rat      = 1.0301528614336024        # ratio between adjacent cell sizes
+x1min      = 6.0277e11       # minimum value of X1
+x1max      = 1.8083e14       # maximum value of X1
+ix1_bc     = reflecting    # inner-X1 boundary flag
+ox1_bc     = user    # outer-X1 boundary flag
+
+nx2        = 96              # Number of zones in X2-direction
+x2min      = 0.0            # minimum value of X2
+x2max      = 3.141592653589793   # maximum value of X2
+ix2_bc     = polar        # inner-X2 boundary flag
+ox2_bc     = polar      # outer-X2 boundary flag
+
+nx3        = 192          # Number of zones in X3-direction
+x3min      = 0.0 # minimum value of X3
+x3max      = 6.283185307179586  # maximum value of X3
+ix3_bc     = periodic        # inner-X3 boundary flag
+ox3_bc     = periodic        # outer-X3 boundary flag
+
+
+
+refinement     = static
+#numlevel       = 2
+#deref_count    = 5
+
+<refinement1>
+level = 1
+x1min = 1.2e12
+x1max = 1e13
+x2min = 0.0
+x2max = 3.14159
+x3min = 0
+x3max = 6.283185307179586
+
+<refinement2>
+level = 2
+x1min = 1.6e12
+x1max = 6e12
+x2min = 0.5
+x2max = 2.641592653589793 #3.141592653589793 #2.55
+x3min = 0
+x3max = 6.283185307179586
+
+<refinement3>
+level = 3
+x1min = 1.9e12
+x1max = 3e12
+x2min = 1
+x2max = 2.141592653589793
+x3min = 0
+x3max = 6.283185307179586
+
+
+<refinement4>
+level = 2
+x1min = 6e12
+x1max = 1.2e13
+x2min = 1.17079632679
+x2max = 1.97079632679
+x3min = 0
+x3max = 6.283185307179586
+
+<refinement5>
+level = 2
+x1min = 6e12
+x1max = 2e13
+x2min = 1.37079632679
+x2max = 1.77079632679
+x3min = 0
+x3max = 6.283185307179586
+
+
+
+
+
+<meshblock>
+nx1        = 16        # Number of zones per MeshBlock in X1-direction
+nx2        = 16         # Number of zones per MeshBlock in X2-direction
+nx3        = 32        # Number of zones per MeshBlock in X3-direction
+
+
+
+<hydro>
+gamma           = 1.35  # gamma = C_p/C_v
+iso_sound_speed = 1.0
+dfloor = 1.0e-16
+pfloor = 1.0e-2
+
+polar_average = true
+polar_average_mode = 1
+
+<problem>
+Ggrav           = 6.674e-8
+GM2             = 1.46e27 #2.096e27
+rsoft2          = 3.e11
+sma             = 1.0718488379451263e13  #1.0757607296920844e13   #1.1075524826812877e13
+ecc             = 0.57
+
+rstar_initial = 1.71e12
+mstar_initial = 6.905e34
+
+pamb          = 1.0e-99           # ambient pressure
+damb          = 1.0e-99
+
+
+trelax        =   1.e6   # relax (damping) for this time
+tau_relax_start = 1.e4  # initial damping timescale
+tau_relax_end   = 1.e8
+t_mass_on     = 2.0e5     #1.5e5   # then turn on the secondary linearly over this time, NB: ignored in corotating frame
+
+diff_rot_eps  = 0.0
+fcorotation   = 2.05 #2.085  #83678880432264  # 1=corotating envelope, 0=irrotational (real, range 0-1)
+output_accel  = 0    # flag to output accelerations
+corotating_frame = 0 # flag whether to do simulation in frame that rotates around COM at initial orbital frequency
+
+
+gas_backreaction = 1 # flag to include gas effect on orbit
+n_particle_substeps = 2 # how many particle integration substeps per timestep?
+update_grav_every = 10 # how many steps between gravity update
+
+
+x1_min_derefine = 0.0
+
+trackfile_dt = 3600.0
+
+separation_start = 1.e99 #1.0e13  #0.7e13
+separation_stop_min = 2.e10
+separation_stop_max = 1e99
+
+## Cooling
+cooling = false
+lstar = 4.e36
+
+output_next_sep_max = 0.0
+dsep_output = 1.e10
